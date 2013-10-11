@@ -58,6 +58,7 @@ extern "C" {
 #define Board_LED6                  EKS_LM4F232_LED6
 #define Board_DIOA0					EKS_LM4F232_DIOA0
 #define Board_DIOA1					EKS_LM4F232_DIOA1
+#define Board_DIOA0A1				EKS_LM4F232_DIOA0A1
 #define Board_DIODATA				EKS_LM4F232_DIODATA
 #define Board_DIOCLK				EKS_LM4F232_DIOCLK
 #define Board_PW_OBD				EKS_LM4F232_OBD

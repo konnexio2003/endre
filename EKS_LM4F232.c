@@ -150,10 +150,6 @@ Void gpioButtonFxn(Void);
 Void gpioButtonFxn2(Void);
 
 /* GPIO configuration structure */
-#define Board_PW_OBD				EKS_LM4F232_OBD
-#define Board_SD_ON					EKS_LM4F232_SD_ON
-#define Board_PWRRF					EKS_LM4F232_PWRRF
-#define Board_PWRTELIT_EN			EKS_LM4F232_PWRTELIT_EN
 
 const GPIO_HWAttrs gpioHWAttrs[EKS_LM4F232_GPIOCOUNT] = {
     {GPIO_PORTL_BASE, GPIO_PIN_0, GPIO_OUTPUT}, /* EKS_LM4F232_LED1 */
@@ -170,6 +166,7 @@ const GPIO_HWAttrs gpioHWAttrs[EKS_LM4F232_GPIOCOUNT] = {
     {GPIO_PORTH_BASE, GPIO_PIN_3, GPIO_OUTPUT}, /* EKS_LM4F232_SD_ON */
     {GPIO_PORTN_BASE, GPIO_PIN_7, GPIO_OUTPUT}, /* EKS_LM4F232_PWRRF */
     {GPIO_PORTD_BASE, GPIO_PIN_4, GPIO_OUTPUT}, /* EKS_LM4F232_PWRTELIT_EN */
+    {GPIO_PORTK_BASE, GPIO_PIN_4 | GPIO_PIN_5, GPIO_OUTPUT}, /* EKS_LM4F232_DIOA0A1 */
 
 };
 
@@ -194,6 +191,7 @@ const GPIO_Config GPIO_config[] = {
     {&gpioHWAttrs[11]},
     {&gpioHWAttrs[12]},
     {&gpioHWAttrs[13]},
+    {&gpioHWAttrs[14]},
     {NULL},
 };
 

@@ -130,9 +130,9 @@ char i;
 		 //teszt latch
 		 for (i=0;i<4;i++) {
 			 GPIO_write(Board_DIOCLK , Board_PIN_ON );
-		 	 GPIO_write((Board_DIOA0 | Board_DIOA1 ), (i << 4));
+		 	 GPIO_write(Board_DIOA0A1, (i<<4));
 			// GPIO_toggle(Board_DIODATA);
-		 //	 GPIO_write(Board_DIODATA , Board_PIN_ON );
+			 GPIO_write(Board_DIODATA , Board_PIN_ON );
 			 GPIO_write(Board_DIOCLK , Board_PIN_OFF );
 			 Task_sleep(100);
 			 GPIO_write(Board_DIOCLK , Board_PIN_ON );
@@ -141,9 +141,9 @@ char i;
 		 }
 		 for (i=0;i<4;i++) {
 		 			 GPIO_write(Board_DIOCLK , Board_PIN_ON );
-		 		 	 GPIO_write((Board_DIOA0 | Board_DIOA1 ), (i << 4));
+		 		 	 GPIO_write((Board_DIOA0A1  ), (i << 4));
 		 			// GPIO_toggle(Board_DIODATA);
-		 	//	 	 GPIO_write(Board_DIODATA , Board_PIN_OFF );
+		 		 	 GPIO_write(Board_DIODATA , Board_PIN_OFF );
 		 			 GPIO_write(Board_DIOCLK , Board_PIN_OFF );
 		 			 Task_sleep(100);
 		 			 GPIO_write(Board_DIOCLK , Board_PIN_ON );

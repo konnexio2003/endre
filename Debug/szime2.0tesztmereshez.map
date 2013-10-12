@@ -1,7 +1,7 @@
 ******************************************************************************
                   TI ARM Linker Unix v5.1.2                    
 ******************************************************************************
->> Linked Sat Oct 12 11:56:41 2013
+>> Linked Sat Oct 12 13:47:00 2013
 
 OUTPUT FILE NAME:   <szime2.0tesztmereshez.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0000a51d

@@ -135,6 +135,7 @@ szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/t
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h
@@ -166,6 +167,10 @@ szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/IInstance.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/IGateProvider.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/BIOS__epilogue.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ff.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/integer.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ffconf.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Clock.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/GPIO.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/ENV.h
 szime2.0teszt.obj: /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdbool.h
@@ -184,6 +189,10 @@ szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SPI.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h
 szime2.0teszt.obj: ../Board.h
 szime2.0teszt.obj: ../EKS_LM4F232.h
+szime2.0teszt.obj: /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdio.h
+szime2.0teszt.obj: /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdarg.h
+szime2.0teszt.obj: /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/string.h
+szime2.0teszt.obj: /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdlib.h
 
 ../szime2.0teszt.c: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/std.h: 
@@ -320,6 +329,7 @@ szime2.0teszt.obj: ../EKS_LM4F232.h
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h: 
@@ -351,6 +361,10 @@ szime2.0teszt.obj: ../EKS_LM4F232.h
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/IGateProvider.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/BIOS__epilogue.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/package/BIOS_RtsGateProxy.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ff.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/integer.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ffconf.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Clock.h: 
 /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/GPIO.h: 
 /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/ENV.h: 
 /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdbool.h: 
@@ -369,3 +383,7 @@ szime2.0teszt.obj: ../EKS_LM4F232.h
 /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h: 
 ../Board.h: 
 ../EKS_LM4F232.h: 
+/opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdio.h: 
+/opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdarg.h: 
+/opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/string.h: 
+/opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdlib.h: 

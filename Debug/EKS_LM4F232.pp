@@ -150,6 +150,7 @@ EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h
@@ -395,6 +396,7 @@ EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/interfaces/ITaskSupport.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task__epilogue.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 

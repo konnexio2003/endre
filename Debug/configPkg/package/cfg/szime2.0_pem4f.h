@@ -22,6 +22,9 @@ extern const ti_sysbios_knl_Task_Handle masterTask;
 #include <ti/sysbios/knl/Task.h>
 extern const ti_sysbios_knl_Task_Handle slaveTask;
 
+#include <ti/sysbios/knl/Task.h>
+extern const ti_sysbios_knl_Task_Handle taskSD;
+
 #define TI_DRIVERS_EMAC_INCLUDED 0
 
 #define TI_DRIVERS_GPIO_INCLUDED 1

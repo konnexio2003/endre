@@ -14,7 +14,9 @@
 -l"/opt/ti/tirtos_1_10_00_23/products/uia_1_03_00_02/packages/ti/uia/services/lib/release/ti.uia.services.aem4f"
 -l"/opt/ti/tirtos_1_10_00_23/products/uia_1_03_00_02/packages/ti/uia/sysbios/lib/release/ti.uia.sysbios.aem4f"
 -l"/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/lib/instrumented/gpio_tivaware.aem4f"
+-l"/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/lib/instrumented/sdspi_tivaware.aem4f"
 -l"/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/lib/instrumented/uart_tivaware.aem4f"
+-l"/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/lib/instrumented/spi_tivaware.aem4f"
 -l"/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/lib/release/ti.sysbios.fatfs.aem4f"
 -l"/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/lib/sysbios/instrumented/sysbios.aem4f"
 -l"/opt/ti/tirtos_1_10_00_23/products/uia_1_03_00_02/packages/ti/uia/runtime/lib/release/ti.uia.runtime.aem4f"
@@ -145,7 +147,7 @@
  */
 xdc_runtime_Startup__EXECFXN__C = 1;
 xdc_runtime_Startup__RESETFXN__C = 1;
-TSK_idle = ti_sysbios_knl_Task_Object__table__V + 160;
+TSK_idle = ti_sysbios_knl_Task_Object__table__V + 320;
 
 
 SECTIONS

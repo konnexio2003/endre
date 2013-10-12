@@ -291,18 +291,18 @@ SDSPITiva_Object sdspiTivaobjects[EKS_LM4F232_SDSPICOUNT];
 /* SDSPI configuration structure, describing which pins are to be used */
 const SDSPITiva_HWAttrs sdspiTivaHWattrs[EKS_LM4F232_SDSPICOUNT] = {
     {
-        SSI0_BASE,          /* SPI base address */
+        SSI2_BASE,          /* SPI base address */
 
-        GPIO_PORTA_BASE,    /* The GPIO port used for the SPI pins */
-        GPIO_PIN_2,         /* SCK */
-        GPIO_PIN_4,         /* MISO */
-        GPIO_PIN_5,         /* MOSI */
+        GPIO_PORTH_BASE,    /* The GPIO port used for the SPI pins */
+        GPIO_PIN_4,         /* SCK */
+        GPIO_PIN_6,         /* MISO */
+        GPIO_PIN_7,         /* MOSI */
 
         GPIO_PORTA_BASE,    /* Chip select port */
-        GPIO_PIN_3,         /* Chip select pin */
+        GPIO_PIN_5,         /* Chip select pin */
 
         GPIO_PORTA_BASE,    /* GPIO TX port */
-        GPIO_PIN_5,         /* GPIO TX pin */
+        GPIO_PIN_7,         /* GPIO TX pin */
     }
 };
 
@@ -317,19 +317,19 @@ const SDSPI_Config SDSPI_config[] = {
 Void EKS_LM4F232_initSDSPI(Void)
 {
     /* Enable the peripherals used by the SD Card */
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI0);
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI2);
 
     /* Configure pad settings */
-    GPIOPadConfigSet(GPIO_PORTA_BASE,
-            GPIO_PIN_2 | GPIO_PIN_5,
+    GPIOPadConfigSet(GPIO_PORTH_BASE,
+            GPIO_PIN_4 | GPIO_PIN_7,
             GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD);
 
     GPIOPadConfigSet(GPIO_PORTA_BASE,
-            GPIO_PIN_4,
+            GPIO_PIN_6,
             GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD_WPU);
 
     GPIOPadConfigSet(GPIO_PORTA_BASE,
-            GPIO_PIN_3,
+            GPIO_PIN_5,
             GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD);
 
     SDSPI_init();
@@ -396,20 +396,32 @@ const SPI_Config SPI_config[] = {
  */
 Void EKS_LM4F232_initSPI(Void)
 {
-    /* SPI1 */
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);
+	 /* SPI1
+	    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI1);
 
-    /* Need to unlock PF0 */
-    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
-    HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= GPIO_PIN_0;
-    GPIOPinConfigure(GPIO_PF0_SSI1RX);
-    GPIOPinConfigure(GPIO_PF1_SSI1TX);
-    GPIOPinConfigure(GPIO_PF2_SSI1CLK);
-    GPIOPinConfigure(GPIO_PF3_SSI1FSS);
+	    Need to unlock PF0
+	    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_KEY;
+	    HWREG(GPIO_PORTF_BASE + GPIO_O_CR) |= GPIO_PIN_0;
+	    GPIOPinConfigure(GPIO_PF0_SSI1RX);
+	    GPIOPinConfigure(GPIO_PF1_SSI1TX);
+	    GPIOPinConfigure(GPIO_PF2_SSI1CLK);
+	    GPIOPinConfigure(GPIO_PF3_SSI1FSS);
 
-    GPIOPinTypeSSI(GPIO_PORTF_BASE, GPIO_PIN_0 | GPIO_PIN_1 |
-                                    GPIO_PIN_2 | GPIO_PIN_3);
-    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_M;
+	    GPIOPinTypeSSI(GPIO_PORTF_BASE, GPIO_PIN_0 | GPIO_PIN_1 |
+	                                    GPIO_PIN_2 | GPIO_PIN_3);
+	    HWREG(GPIO_PORTF_BASE + GPIO_O_LOCK) = GPIO_LOCK_M;*/
+
+
+		/* SSI0 */
+		    SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI0);
+
+		    GPIOPinConfigure(GPIO_PA2_SSI0CLK);
+		    GPIOPinConfigure(GPIO_PA3_SSI0FSS);
+		    GPIOPinConfigure(GPIO_PA4_SSI0RX);
+		    GPIOPinConfigure(GPIO_PA5_SSI0TX);
+
+		    GPIOPinTypeSSI(GPIO_PORTA_BASE, GPIO_PIN_2 | GPIO_PIN_3 |
+		                                    GPIO_PIN_4 | GPIO_PIN_5);
 
     /* SSI3 */
     SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI3);

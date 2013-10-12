@@ -133,6 +133,8 @@ szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/t
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task__epilogue.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h
 szime2.0teszt.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h
@@ -177,6 +179,8 @@ szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driv
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/i2c.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/uart.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/ssi.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SDSPI.h
+szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SPI.h
 szime2.0teszt.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h
 szime2.0teszt.obj: ../Board.h
 szime2.0teszt.obj: ../EKS_LM4F232.h
@@ -314,6 +318,8 @@ szime2.0teszt.obj: ../EKS_LM4F232.h
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task__epilogue.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h: 
@@ -358,6 +364,8 @@ szime2.0teszt.obj: ../EKS_LM4F232.h
 /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/i2c.h: 
 /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/uart.h: 
 /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/ssi.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SDSPI.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SPI.h: 
 /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h: 
 ../Board.h: 
 ../EKS_LM4F232.h: 

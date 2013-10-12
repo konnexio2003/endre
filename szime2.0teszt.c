@@ -44,8 +44,8 @@
 /* TI-RTOS Header files */
 #include <ti/drivers/GPIO.h>
 // #include <ti/drivers/I2C.h>
-// #include <ti/drivers/SDSPI.h>
-// #include <ti/drivers/SPI.h>
+ #include <ti/drivers/SDSPI.h>
+ #include <ti/drivers/SPI.h>
  #include <ti/drivers/UART.h>
 // #include <ti/drivers/USBMSCHFatFs.h>
 // #include <ti/drivers/Watchdog.h>
@@ -61,10 +61,115 @@
 UART_Handle uart1,uart2,uart3,uart4,uart5,uart6,uart7;
 UART_Params uartParams;
 
+#define SPI_MSG_LENGTH    26
+
+/* Allocate buffers in .dma section of memory for concerto devices */
+#ifdef MWARE
+#pragma DATA_SECTION(masterRxBuffer, ".dma");
+#pragma DATA_SECTION(masterTxBuffer, ".dma");
+#pragma DATA_SECTION(slaveRxBuffer, ".dma");
+#pragma DATA_SECTION(slaveTxBuffer, ".dma");
+#endif
+
+UChar masterRxBuffer[SPI_MSG_LENGTH];
+UChar masterTxBuffer[SPI_MSG_LENGTH] = "Hello, this is master SPI";
+
+UChar slaveRxBuffer[SPI_MSG_LENGTH];
+UChar slaveTxBuffer[SPI_MSG_LENGTH] =  "Hello, this is slave SPI";
+
+Void slaveTaskFxn (UArg arg0, UArg arg1)
+{
+    SPI_Handle slaveSpi;
+    SPI_Params slaveSpiParams;
+    SPI_Transaction slaveTransaction;
+    UInt transferOK;
+
+    /* Initialize SPI handle with slave mode */
+    SPI_Params_init(&slaveSpiParams);
+    slaveSpiParams.mode = SPI_SLAVE;
+    slaveSpi = SPI_open(Board_SPI1, &slaveSpiParams);
+    if (slaveSpi == NULL) {
+        System_abort("Error initializing SPI\n");
+    }
+    else {
+        System_printf("SPI slave initialized\n");
+    }
+
+    /* Initialize slave SPI transaction structure */
+    slaveTransaction.count = SPI_MSG_LENGTH;
+    slaveTransaction.txBuf = (Ptr)slaveTxBuffer;
+    slaveTransaction.rxBuf = (Ptr)slaveRxBuffer;
+
+    /* Initiate SPI transfer */
+    transferOK = SPI_transfer(slaveSpi, &slaveTransaction);
+
+    if(transferOK) {
+        /* Print contents of slave receive buffer */
+        System_printf("Slave: %s\n", slaveRxBuffer);
+    }
+    else {
+        System_printf("Unsuccessful slave SPI transfer");
+    }
+    System_flush();
+    /* Deinitialize SPI */
+    SPI_close(slaveSpi);
+}
+/*
+ *  ======== masterTaskFxn ========
+ *  Task function for master task.
+ *
+ *  This task runs at a lower priority after the slave
+ *  task to ensure it is ready for a transaction.
+ *  Master SPI sends a message to slave and also
+ *  receives message from slave. Task for this function
+ *  is created statically. See the project's .cfg
+ *  file.
+ */
+Void masterTaskFxn (UArg arg0, UArg arg1)
+{
+    SPI_Handle masterSpi;
+    SPI_Transaction masterTransaction;
+    UInt transferOK;
+
+    /* Initialize SPI handle as default master */
+    masterSpi = SPI_open(Board_SPI0, NULL);
+    if (masterSpi == NULL) {
+        System_abort("Error initializing SPI\n");
+    }
+    else {
+        System_printf("SPI master initialized\n");
+    }
+
+    /* Initialize master SPI transaction structure */
+    masterTransaction.count = SPI_MSG_LENGTH;
+    masterTransaction.txBuf = (Ptr)masterTxBuffer;
+    masterTransaction.rxBuf = (Ptr)masterRxBuffer;
+
+    /* Initiate SPI transfer */
+    transferOK = SPI_transfer(masterSpi, &masterTransaction);
+
+    if(transferOK) {
+        /* Print contents of master receive buffer */
+        System_printf("Master: %s\n", masterRxBuffer);
+    }
+    else {
+        System_printf("Unsuccessful master SPI transfer");
+    }
+
+    /* Deinitialize SPI */
+    SPI_close(masterSpi);
+
+    System_printf("Done\n");
+    System_flush();
+
+ //   BIOS_exit(0);
+}
+
 Void UartTest (UArg a0, UArg a1)
 {
 //Char inputbuf[20];
 char testchar=0;
+char Measurebyte=0x55;
 const Char testPrompt[] = "\fTest 012345:\r\n";
 /* Create a UART with data processing off. */
 	uartParams.writeDataMode = UART_DATA_BINARY;
@@ -114,7 +219,7 @@ while (TRUE) {
 	UART_write(uart1, &testchar, 1);
 	UART_write(uart2, &testchar, 1);
 	UART_write(uart3, &testchar, 1);
-	UART_write(uart4, &testchar, 1);
+	UART_write(uart4, &Measurebyte, 1);
 	UART_write(uart5, &testchar, 1);
 	UART_write(uart6, &testchar, 1);
 	UART_write(uart7, &testchar, 1);
@@ -125,6 +230,8 @@ while (TRUE) {
 Void PortTest (UArg a0, UArg a1)
 {
 char i;
+
+
 
 	 while (TRUE) {
 		 //teszt latch
@@ -167,8 +274,8 @@ Int main(Void)
     Board_initGPIO();
     // Board_initDMA();
     // Board_initI2C();
-    // Board_initSDSPI();
-    // Board_initSPI();
+   //  Board_initSDSPI();
+     Board_initSPI();
      Board_initUART();
     // Board_initUSB(Board_USBDEVICE);
     // Board_initUSBMSCHFatFs();

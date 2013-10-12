@@ -337,12 +337,18 @@ digraph configuration {
         label="";
         ti_drivers__top [shape=box,label="ti.drivers\n1, 0, 0", color=white];
         ti_drivers__bot [shape=point,label="", style=invis];
+        ti_drivers_SDSPI [style=filled,fillcolor=lightgray, label="SDSPI"];
+        ti_drivers__top -> ti_drivers_SDSPI[style=invis];
+        ti_drivers_SDSPI -> ti_drivers__bot[style=invis];
         ti_drivers_GPIO [style=filled,fillcolor=lightgray, label="GPIO"];
         ti_drivers__top -> ti_drivers_GPIO[style=invis];
         ti_drivers_GPIO -> ti_drivers__bot[style=invis];
         ti_drivers_UART [style=filled,fillcolor=lightgray, label="UART"];
         ti_drivers__top -> ti_drivers_UART[style=invis];
         ti_drivers_UART -> ti_drivers__bot[style=invis];
+        ti_drivers_SPI [style=filled,fillcolor=lightgray, label="SPI"];
+        ti_drivers__top -> ti_drivers_SPI[style=invis];
+        ti_drivers_SPI -> ti_drivers__bot[style=invis];
     }
     subgraph cluster32 {
         label="";

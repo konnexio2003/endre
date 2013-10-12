@@ -1676,16 +1676,28 @@
       <cFileName>null</cFileName>
    </modIdMap>
    <modIdMap id="12">
+      <moduleName>ti.drivers.SDSPI</moduleName>
+      <packageVersion>1, 0, 0</packageVersion>
+      <packageBase>/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/</packageBase>
+      <cFileName>SDSPI.c</cFileName>
+   </modIdMap>
+   <modIdMap id="13">
       <moduleName>ti.drivers.GPIO</moduleName>
       <packageVersion>1, 0, 0</packageVersion>
       <packageBase>/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/</packageBase>
       <cFileName>GPIO.c</cFileName>
    </modIdMap>
-   <modIdMap id="13">
+   <modIdMap id="14">
       <moduleName>ti.drivers.UART</moduleName>
       <packageVersion>1, 0, 0</packageVersion>
       <packageBase>/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/</packageBase>
       <cFileName>UART.c</cFileName>
+   </modIdMap>
+   <modIdMap id="15">
+      <moduleName>ti.drivers.SPI</moduleName>
+      <packageVersion>1, 0, 0</packageVersion>
+      <packageBase>/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/</packageBase>
+      <cFileName>SPI.c</cFileName>
    </modIdMap>
    <modIdMap id="32820">
       <moduleName>ti.uia.events.DvtTypes</moduleName>
@@ -1753,13 +1765,13 @@
       <packageBase>/opt/ti/tirtos_1_10_00_23/products/uia_1_03_00_02/packages/ti/uia/runtime/</packageBase>
       <cFileName>null</cFileName>
    </modIdMap>
-   <modIdMap id="14">
+   <modIdMap id="16">
       <moduleName>ti.uia.runtime.LogSync_CpuTimestampProxy</moduleName>
       <packageVersion>1, 0, 0, 2</packageVersion>
       <packageBase>/opt/ti/tirtos_1_10_00_23/products/uia_1_03_00_02/packages/ti/uia/runtime/</packageBase>
       <cFileName>null</cFileName>
    </modIdMap>
-   <modIdMap id="15">
+   <modIdMap id="17">
       <moduleName>ti.uia.runtime.LogSync_GlobalTimestampProxy</moduleName>
       <packageVersion>1, 0, 0, 2</packageVersion>
       <packageBase>/opt/ti/tirtos_1_10_00_23/products/uia_1_03_00_02/packages/ti/uia/runtime/</packageBase>

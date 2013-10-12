@@ -148,6 +148,8 @@ EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task__epilogue.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h
@@ -210,8 +212,14 @@ EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/GPIO.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/ENV.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/watchdog.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/uart.h
-EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h
-EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/uart/UARTTiva.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SDSPI.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/sdspi/SDSPITiva.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ff.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/integer.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ffconf.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/diskio.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SPI.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/spi/SPITivaDMA.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/hal/Hwi.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Semaphore.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h
@@ -235,6 +243,10 @@ EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/IModule.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h
 EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Queue.h
 EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Log.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/uart/UARTTiva.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/hal/Hwi.h
+EKS_LM4F232.obj: /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Semaphore.h
 
 ../EKS_LM4F232.c: 
 /opt/ti/ccsv5/tools/compiler/arm_5.1.2/include/stdint.h: 
@@ -384,6 +396,8 @@ EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Log.h
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task__epilogue.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/package/Task_SupportProxy.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/System.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/ISystemSupport.h: 
@@ -446,8 +460,14 @@ EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Log.h
 /opt/ti/tirtos_1_10_00_23/packages/ti/drivers/ENV.h: 
 /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/watchdog.h: 
 /opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0/driverlib/uart.h: 
-/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h: 
-/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/uart/UARTTiva.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SDSPI.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/sdspi/SDSPITiva.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ff.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/integer.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/ffconf.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/fatfs/diskio.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/SPI.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/spi/SPITivaDMA.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/hal/Hwi.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Semaphore.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Types.h: 
@@ -471,3 +491,7 @@ EKS_LM4F232.obj: /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Log.h
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Task.h: 
 /opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Queue.h: 
 /opt/ti/xdctools_3_25_03_72/packages/xdc/runtime/Log.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/UART.h: 
+/opt/ti/tirtos_1_10_00_23/packages/ti/drivers/uart/UARTTiva.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/hal/Hwi.h: 
+/opt/ti/tirtos_1_10_00_23/products/bios_6_35_01_29/packages/ti/sysbios/knl/Semaphore.h: 

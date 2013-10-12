@@ -298,10 +298,10 @@ const SDSPITiva_HWAttrs sdspiTivaHWattrs[EKS_LM4F232_SDSPICOUNT] = {
         GPIO_PIN_6,         /* MISO */
         GPIO_PIN_7,         /* MOSI */
 
-        GPIO_PORTA_BASE,    /* Chip select port */
+        GPIO_PORTH_BASE,    /* Chip select port */
         GPIO_PIN_5,         /* Chip select pin */
 
-        GPIO_PORTA_BASE,    /* GPIO TX port */
+        GPIO_PORTH_BASE,    /* GPIO TX port */
         GPIO_PIN_7,         /* GPIO TX pin */
     }
 };
@@ -324,11 +324,11 @@ Void EKS_LM4F232_initSDSPI(Void)
             GPIO_PIN_4 | GPIO_PIN_7,
             GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD);
 
-    GPIOPadConfigSet(GPIO_PORTA_BASE,
+    GPIOPadConfigSet(GPIO_PORTH_BASE,
             GPIO_PIN_6,
             GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD_WPU);
 
-    GPIOPadConfigSet(GPIO_PORTA_BASE,
+    GPIOPadConfigSet(GPIO_PORTH_BASE,
             GPIO_PIN_5,
             GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD);
 

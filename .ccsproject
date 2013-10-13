@@ -8,6 +8,6 @@
 	<isElfFormat value="true"/>
 	<rts value="libc.a"/>
 	<templateProperties value="id=com_ti_rtsc_tirtos_example_46.projectspec.fatsdraw_TivaTM4C123GH6PGE,type=rtsc,products=com.ti.rtsc.TIRTOS,xdcToolsVersion=3.25.00.48,platform=ti.platforms.stellaris:$DeviceId$,buildProfile=release,isHybrid=true,configuroOptions=--compileOptions &quot;-g --optimize_with_debug&quot;,"/>
-	<connection value="common/targetdb/connections/Stellaris_ICDI_Connection.xml"/>
+	<connection value="common/targetdb/connections/TIXDS100v2_Connection.xml"/>
 	<isTargetManual value="false"/>
 </projectOptions>

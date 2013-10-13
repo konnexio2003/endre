@@ -65,6 +65,7 @@ extern "C" {
 #define Board_SD_ON					EKS_LM4F232_SD_ON
 #define Board_PWRRF					EKS_LM4F232_PWRRF
 #define Board_PWRTELIT_EN			EKS_LM4F232_PWRTELIT_EN
+#define Board_GSM_ONOFF				EKS_LM4F232_PB2
 #define Board_BUTTON                EKS_LM4F232_SW3
 #define Board_BUTTON2               EKS_LM4F232_SW4
 #define Board_LED_ON                EKS_LM4F232_LED_ON

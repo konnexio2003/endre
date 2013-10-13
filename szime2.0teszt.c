@@ -226,120 +226,34 @@ Void SDTask(UArg arg0, UArg arg1)
 
 
 
-Void slaveTaskFxn (UArg arg0, UArg arg1)
-{
-    SPI_Handle slaveSpi;
-    SPI_Params slaveSpiParams;
-    SPI_Transaction slaveTransaction;
-    UInt transferOK;
-
-    /* Initialize SPI handle with slave mode */
-    SPI_Params_init(&slaveSpiParams);
-    slaveSpiParams.mode = SPI_SLAVE;
-    slaveSpi = SPI_open(Board_SPI1, &slaveSpiParams);
-    if (slaveSpi == NULL) {
-        System_abort("Error initializing SPI\n");
-    }
-    else {
-        System_printf("SPI slave initialized\n");
-    }
-
-    /* Initialize slave SPI transaction structure */
-    slaveTransaction.count = SPI_MSG_LENGTH;
-    slaveTransaction.txBuf = (Ptr)slaveTxBuffer;
-    slaveTransaction.rxBuf = (Ptr)slaveRxBuffer;
-
-    /* Initiate SPI transfer */
-    transferOK = SPI_transfer(slaveSpi, &slaveTransaction);
-
-    if(transferOK) {
-        /* Print contents of slave receive buffer */
-        System_printf("Slave: %s\n", slaveRxBuffer);
-    }
-    else {
-        System_printf("Unsuccessful slave SPI transfer");
-    }
-    System_flush();
-    /* Deinitialize SPI */
-    SPI_close(slaveSpi);
-}
-/*
- *  ======== masterTaskFxn ========
- *  Task function for master task.
- *
- *  This task runs at a lower priority after the slave
- *  task to ensure it is ready for a transaction.
- *  Master SPI sends a message to slave and also
- *  receives message from slave. Task for this function
- *  is created statically. See the project's .cfg
- *  file.
- */
-Void masterTaskFxn (UArg arg0, UArg arg1)
-{
-    SPI_Handle masterSpi;
-    SPI_Transaction masterTransaction;
-    UInt transferOK;
-
-    /* Initialize SPI handle as default master */
-    masterSpi = SPI_open(Board_SPI0, NULL);
-    if (masterSpi == NULL) {
-        System_abort("Error initializing SPI\n");
-    }
-    else {
-        System_printf("SPI master initialized\n");
-    }
-
-    /* Initialize master SPI transaction structure */
-    masterTransaction.count = SPI_MSG_LENGTH;
-    masterTransaction.txBuf = (Ptr)masterTxBuffer;
-    masterTransaction.rxBuf = (Ptr)masterRxBuffer;
-
-    /* Initiate SPI transfer */
-    transferOK = SPI_transfer(masterSpi, &masterTransaction);
-
-    if(transferOK) {
-        /* Print contents of master receive buffer */
-        System_printf("Master: %s\n", masterRxBuffer);
-    }
-    else {
-        System_printf("Unsuccessful master SPI transfer");
-    }
-
-    /* Deinitialize SPI */
-    SPI_close(masterSpi);
-
-    System_printf("Done\n");
-    System_flush();
-
- //   BIOS_exit(0);
-}
 
 Void UartTest (UArg a0, UArg a1)
 {
-//Char inputbuf[20];
-char testchar=0;
-char Measurebyte=0x55;
+Char inputbuf[60];
+int db;
 const Char testPrompt[] = "\fTest 012345:\r\n";
 /* Create a UART with data processing off. */
 	uartParams.writeDataMode = UART_DATA_BINARY;
     uartParams.readDataMode = UART_DATA_BINARY;
     uartParams.readReturnMode = UART_RETURN_FULL;
     uartParams.readEcho = UART_ECHO_OFF;
+    uartParams.dataLength=UART_LEN_8;
     uartParams.baudRate = 4800; //57600 4800
-      //uartParams.readTimeout = 2000;
-        uart1 = UART_open(UART1_GSM , &uartParams);
-        uart2 = UART_open(UART2_GPS, &uartParams);
-        uart3 = UART_open(UART3_GPSTRCACE, &uartParams);
-        uart4 = UART_open(UART4_PORT, &uartParams);
-        uart5 = UART_open(UART5_RF, &uartParams);
-        uart7 = UART_open(UART7_USB, &uartParams);
-        uartParams.writeDataMode = UART_DATA_BINARY;
-        uartParams.readDataMode = UART_DATA_TEXT;
-        uartParams.readReturnMode = UART_RETURN_NEWLINE;
-        uartParams.readEcho = UART_ECHO_OFF;
-        uartParams.baudRate = 9600; //57600 4800
-        uartParams.readTimeout = 5000;
-        uart6 = UART_open(UART6_ELM, &uartParams);
+    uartParams.readTimeout = 2000;
+    uart1 = UART_open(UART1_GSM , &uartParams);
+    uart2 = UART_open(UART2_GPS, &uartParams);
+    uart3 = UART_open(UART3_GPSTRCACE, &uartParams);
+    uart4 = UART_open(UART4_PORT, &uartParams);
+    uart5 = UART_open(UART5_RF, &uartParams);
+    uart7 = UART_open(UART7_USB, &uartParams);
+    uartParams.writeDataMode = UART_DATA_BINARY;
+    uartParams.readDataMode = UART_DATA_TEXT;
+    uartParams.readReturnMode = UART_RETURN_NEWLINE;
+    uartParams.readEcho = UART_ECHO_OFF;
+    uartParams.baudRate = 9600; //57600 4800
+    uartParams.dataLength=UART_LEN_8;
+    uartParams.readTimeout = 5000;
+    uart6 = UART_open(UART6_ELM, &uartParams);
 
         if (uart1 == NULL) {
         System_abort("Error opening the UART1");
@@ -362,19 +276,27 @@ const Char testPrompt[] = "\fTest 012345:\r\n";
         if (uart7 == NULL) {
         System_abort("Error opening the UART7");
         }
+GPIO_write(Board_GSM_ONOFF,Board_PIN_ON);
+Task_sleep(100);
+GPIO_write(Board_GSM_ONOFF,Board_PIN_OFF);
+Task_sleep(2000);
+GPIO_write(Board_GSM_ONOFF,Board_PIN_ON);
+Task_sleep(1000);
 UART_write(uart4, testPrompt, sizeof(testPrompt));
 while (TRUE) {
-
-	UART_write(uart1, &testchar, 1);
-	UART_write(uart2, &testchar, 1);
-	UART_write(uart3, &testchar, 1);
-	UART_write(uart4, &Measurebyte, 1);
-	UART_write(uart5, &testchar, 1);
-	UART_write(uart6, &testchar, 1);
-	UART_write(uart7, &testchar, 1);
-    testchar++;
-    Task_sleep(100);
-    }
+db=UART_read(uart3, inputbuf, 110);
+if (db==0)
+ 	{
+	GPIO_write(Board_GSM_ONOFF,Board_PIN_ON);
+	Task_sleep(100);
+	GPIO_write(Board_GSM_ONOFF,Board_PIN_OFF);
+	Task_sleep(2000);
+	GPIO_write(Board_GSM_ONOFF,Board_PIN_ON);
+	Task_sleep(1000);
+	}
+System_printf(inputbuf);
+Task_sleep(100);
+	}
 }
 Void PortTest (UArg a0, UArg a1)
 {

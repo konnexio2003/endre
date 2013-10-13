@@ -167,7 +167,7 @@ const GPIO_HWAttrs gpioHWAttrs[EKS_LM4F232_GPIOCOUNT] = {
     {GPIO_PORTN_BASE, GPIO_PIN_7, GPIO_OUTPUT}, /* EKS_LM4F232_PWRRF */
     {GPIO_PORTD_BASE, GPIO_PIN_4, GPIO_OUTPUT}, /* EKS_LM4F232_PWRTELIT_EN */
     {GPIO_PORTK_BASE, GPIO_PIN_4 | GPIO_PIN_5, GPIO_OUTPUT}, /* EKS_LM4F232_DIOA0A1 */
-
+    {GPIO_PORTB_BASE, GPIO_PIN_2, GPIO_OUTPUT}, /* EKS_LM4F232_PB2 */
 };
 
 /* GPIO callback structure to set callbacks for GPIO interrupts */
@@ -192,6 +192,7 @@ const GPIO_Config GPIO_config[] = {
     {&gpioHWAttrs[12]},
     {&gpioHWAttrs[13]},
     {&gpioHWAttrs[14]},
+    {&gpioHWAttrs[15]},
     {NULL},
 };
 
@@ -218,6 +219,7 @@ Void EKS_LM4F232_initGPIO(Void)
     GPIOPinTypeGPIOOutput(GPIO_PORTH_BASE, GPIO_PIN_3); /* EKS_LM4F232_SD_ON */
     GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, GPIO_PIN_7); /* EKS_LM4F232_PWRRF */
     GPIOPinTypeGPIOOutput(GPIO_PORTD_BASE, GPIO_PIN_4); /* EKS_LM4F232_PWRTELIT_EN */
+    GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, GPIO_PIN_2); /* EKS_LM4F232_PB2 */
     /* Setup the button GPIO pins used */
     //GPIOPinTypeGPIOInput(GPIO_PORTM_BASE, allButtons);
     //GPIOPadConfigSet(GPIO_PORTM_BASE, allButtons, GPIO_STRENGTH_4MA, GPIO_PIN_TYPE_STD_WPU);

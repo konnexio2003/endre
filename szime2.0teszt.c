@@ -52,13 +52,17 @@
 // #include <ti/drivers/USBMSCHFatFs.h>
 // #include <ti/drivers/Watchdog.h>
 // #include <ti/drivers/WiFi.h>
-
+#include "driverlib/hibernate.h"
+#include "driverlib/sysctl.h"
+#include "inc/hw_hibernate.h"
+#include "utils/ustdlib.h"
 /* Example/Board Header files */
 #include "Board.h"
 
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 /* String conversion macro */
 #define STR_(n)             #n
 #define STR(n)              STR_(n)
@@ -103,7 +107,8 @@ const Char textarray[] = \
 "If an inputfile already exists, or if the file was already once        \n"
 "generated, then the inputfile will NOT be modified.                    \n"
 "***********************************************************************\n";
-
+typedef char fnme[13];
+void timefname(struct tm* ct, fnme fn);
 UChar cpy_buff[CPY_BUFF_SIZE];
 Void SDTask(UArg arg0, UArg arg1)
 {
@@ -340,6 +345,10 @@ char i;
  */
 Int main(Void)
 {
+unsigned long ulRTC;
+unsigned long ulR1;
+struct tm CLKtime;
+fnme ttt;
     /* Call board init functions. */
     Board_initGeneral();
     Board_initGPIO();
@@ -352,7 +361,11 @@ Int main(Void)
     // Board_initUSBMSCHFatFs();
     // Board_initWatchdog();
     // Board_initWiFi();
-
+SysCtlPeripheralEnable(SYSCTL_PERIPH_HIBERNATE);
+//
+// Enable the Hibernate module to run.
+//
+HibernateEnableExpClk(SysCtlClockGet());
     /* Turn on user LED */
     GPIO_write(Board_PW_OBD , Board_LED_ON);
     GPIO_write(Board_SD_ON , Board_LED_ON);
@@ -360,15 +373,35 @@ Int main(Void)
     GPIO_write(Board_PWRTELIT_EN , Board_LED_ON);
     GPIO_write(Board_LED1 , Board_LED_ON);
 
-    System_printf("Starting the example\nSystem provider is set to SysMin. "
-                  "Halt the target and use ROV to view output.\n");
-    /* SysMin will only print to the console when you call flush or exit */
-    System_flush();
+// The hibernate peripheral trim register must be set per silicon
+// erratum 2.1
 
-    /* Start BIOS */
-    BIOS_start();
+HibernateRTCTrimSet(0x7FFF);
+//
+// Start the RTC running.  If it was already running then this will have
+// no effect.
+//
+HibernateRTCEnable();
+//
+// Get the current time in seconds from the RTC.
+//
+ulRTC = HibernateRTCGet();
+ulR1   = HibernateRTCSSGet();
+//
+// Convert the RTC time to a time structure.
+//
+ulocaltime(ulRTC, &CLKtime);
+timefname(&CLKtime,ttt);
+System_printf("RTC Time is: %4u %2u.%2u. %2u:%2u %2us    %6u\n",
+CLKtime.tm_year,CLKtime.tm_mon,CLKtime.tm_mday,CLKtime.tm_hour,CLKtime.tm_min,CLKtime.tm_sec, 1000*ulR1/32768);
+System_printf("Starting the example\nSystem provider is set to SysMin, halt the target and use ROV to view output.\n");
+/* SysMin will only print to the console when you call flush or exit */
+ System_flush();
 
-    return (0);
+/* Start BIOS */
+BIOS_start();
+
+return (0);
 }
 Void GPIOTicker(UArg arg0)
 {
@@ -378,4 +411,10 @@ GPIO_toggle(Board_LED3);
 GPIO_toggle(Board_LED4);
 GPIO_toggle(Board_LED5);
 GPIO_toggle(Board_LED6);
+}
+void timefname(struct tm*  ct, fnme fn)
+{
+
+	usprintf(fn,"%2u%002u%002u.%002u\n",ct->tm_year,ct->tm_mon,ct->tm_mday,ct->tm_hour);
+
 }

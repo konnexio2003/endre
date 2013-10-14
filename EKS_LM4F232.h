@@ -102,8 +102,7 @@ typedef enum EKS_LM4F232_I2CName {
  *  @brief  Enum of SDSPI names on the EKS_LM4F232 dev board
  */
 typedef enum EKS_LM4F232_SDSPIName {
-    EKS_LM4F232_SDSPI0 = 0,
-
+    EKS_LM4F232_SDSPI2 = 0,
     EKS_LM4F232_SDSPICOUNT
 } EKS_LM4F232_SDSPIName;
 

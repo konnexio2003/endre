@@ -11,15 +11,18 @@ CFG_SRCS += \
 
 C_SRCS += \
 ../EKS_LM4F232.c \
-../szime2.0teszt.c 
+../szime2.0teszt.c \
+../ustdlib.c 
 
 OBJS += \
 ./EKS_LM4F232.obj \
-./szime2.0teszt.obj 
+./szime2.0teszt.obj \
+./ustdlib.obj 
 
 C_DEPS += \
 ./EKS_LM4F232.pp \
-./szime2.0teszt.pp 
+./szime2.0teszt.pp \
+./ustdlib.pp 
 
 GEN_MISC_DIRS += \
 ./configPkg/ 
@@ -43,15 +46,18 @@ GEN_MISC_DIRS__QUOTED += \
 
 C_DEPS__QUOTED += \
 "EKS_LM4F232.pp" \
-"szime2.0teszt.pp" 
+"szime2.0teszt.pp" \
+"ustdlib.pp" 
 
 OBJS__QUOTED += \
 "EKS_LM4F232.obj" \
-"szime2.0teszt.obj" 
+"szime2.0teszt.obj" \
+"ustdlib.obj" 
 
 C_SRCS__QUOTED += \
 "../EKS_LM4F232.c" \
-"../szime2.0teszt.c" 
+"../szime2.0teszt.c" \
+"../ustdlib.c" 
 
 GEN_CMDS__FLAG += \
 -l"./configPkg/linker.cmd" 

@@ -6,6 +6,7 @@ CG_TOOL_ROOT := /opt/ti/ccsv5/tools/compiler/arm_5.1.2
 
 ORDERED_OBJS += \
 $(GEN_CMDS__FLAG) \
+"./ustdlib.obj" \
 "./szime2.0teszt.obj" \
 "./EKS_LM4F232.obj" \
 "../EKS_LM4F232.cmd" \
@@ -124,8 +125,8 @@ szime2.0tesztmereshez.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 clean:
 	-$(RM) $(TMS470_EXECUTABLE_OUTPUTS__QUOTED)$(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(GEN_OPTS__QUOTED)$(GEN_CMDS__QUOTED) "szime2.0tesztmereshez.out"
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
-	-$(RM) "EKS_LM4F232.pp" "szime2.0teszt.pp" 
-	-$(RM) "EKS_LM4F232.obj" "szime2.0teszt.obj" 
+	-$(RM) "EKS_LM4F232.pp" "szime2.0teszt.pp" "ustdlib.pp" 
+	-$(RM) "EKS_LM4F232.obj" "szime2.0teszt.obj" "ustdlib.obj" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

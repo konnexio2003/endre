@@ -27,4 +27,11 @@ szime2.0teszt.obj: ../szime2.0teszt.c $(GEN_OPTS) $(GEN_HDRS)
 	@echo 'Finished building: $<'
 	@echo ' '
 
+ustdlib.obj: ../ustdlib.c $(GEN_OPTS) $(GEN_HDRS)
+	@echo 'Building file: $<'
+	@echo 'Invoking: ARM Compiler'
+	"/opt/ti/ccsv5/tools/compiler/arm_5.1.2/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 --abi=eabi -me --include_path="/opt/ti/ccsv5/tools/compiler/arm_5.1.2/include" --include_path="/opt/ti/tirtos_1_10_00_23/products/TivaWare_C_Series-1.0" -g --gcc --define=PART_TM4C123GH6PGE --define=ccs --define=TIVAWARE --diag_warning=225 --display_error_number --diag_wrap=off --gen_func_subsections=on --preproc_with_compile --preproc_dependency="ustdlib.pp" $(GEN_OPTS__FLAG) "$(shell echo $<)"
+	@echo 'Finished building: $<'
+	@echo ' '
+
 

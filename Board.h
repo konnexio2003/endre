@@ -72,7 +72,7 @@ extern "C" {
 #define Board_LED_OFF               EKS_LM4F232_LED_OFF
 #define Board_PIN_ON                EKS_LM4F232_LED_ON
 #define Board_PIN_OFF               EKS_LM4F232_LED_OFF
-#define Board_SDSPI                 EKS_LM4F232_SDSPI0
+#define Board_SDSPI                 EKS_LM4F232_SDSPI2
 #define Board_SPI0                  EKS_LM4F232_SPI2
 #define Board_SPI1                  EKS_LM4F232_SPI3
 #define Board_SPI_CC3000            EKS_LM4F232_SPI3
